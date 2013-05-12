@@ -1,0 +1,23 @@
+{
+    "name": "ethna/app",
+    "description": "Ethna sample application.",
+    "keywords" : ["Web", "Ethna", "Framework", "Application", "MVC", "Sample"],
+    "type": "application",
+    "homepage": "http://ethna.jp/",
+    "time": "2013-05-11",
+    "authors": [
+        {
+            "name": "Yuki Matsukura",
+            "email": "matsubokkuri@gmail.com",
+            "homepage": "http://matsu.teraren.com/",
+            "role": "Developer"
+         }
+    ],
+    "require": {
+      "smarty/smarty": "v3.1.13"
+    },
+    "autoload": {
+        "psr-0": {"Frontend": "src/"}
+    },
+     "license": "BSD-3-Clause"
+}
