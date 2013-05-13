@@ -1,6 +1,10 @@
 Ethna sample application
 =================================
 
+WORK IN PROGRESS.
+
+Currently application works only very simple and hard coded application.
+
 Benchmark
 --------------------------------
 
