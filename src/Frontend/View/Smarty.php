@@ -1,15 +1,15 @@
 <?php
 namespace Frontend\View;
-class Smarty extends \Ethna\View\Smarty
+class Smarty extends \Ethna\View
 {
   public function __construct()
   {
-    parent::__construct();
+    $this->smarty = new \Smarty();
 
     $this->smarty->template_dir = '/tmp/';
     $this->smarty->compile_dir = '/tmp/';
   }
-  public function execute($forward_name)
+  public function defaultOutput($forward_name)
   {
     // remove relative path to go upper directory for security.
     $forward_name = str_replace('..', '', $forward_name);
@@ -30,7 +30,11 @@ class Smarty extends \Ethna\View\Smarty
 
     $file = \Ethna\DIContainerFactory::getContainer()->get('app_root') . DIRECTORY_SEPARATOR . 'template' . DIRECTORY_SEPARATOR. $relative_file . '.tpl';
 
+
+    $this->smarty->error_reporting = E_ALL & E_STRICT & ~E_NOTICE;
+
     $this->smarty->display($file);
+
   }
 }
 
